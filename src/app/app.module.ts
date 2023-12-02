@@ -17,7 +17,7 @@ import { ProviderComponent } from './provider/provider.component';
 import { HeaderComponent } from './header/header.component';
 import { CategoryComponent } from './category/category.component';
 import { Sidebar2Component } from './sidebar2/sidebar2.component';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ViewemployeeComponent } from './viewemployee/viewemployee.component';
 import { EmailComponent } from './email/email.component';
 import { TwofactorComponent } from './twofactor/twofactor.component';
@@ -28,6 +28,14 @@ import { OrganisateurComponent } from './ComponentsEvent/organisateur/organisate
 import { Sidebar3Component } from './sidebar3/sidebar3/sidebar3.component';
 import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component';
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
+import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component';
+import { ClientComponent } from './CampaignModule/client/client.component';
+import { ProduitComponent } from './CampaignModule/produit/produit.component';
+import { CampaignComponent } from './CampaignModule/campaign/campaign.component';
+import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
+import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionnaire.component';
+import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
+
 
 
 
@@ -56,6 +64,13 @@ import { ViewprovidersComponent } from './viewproviders/viewproviders.component'
     Sidebar3Component,
     CalendarComponent,
     ViewprovidersComponent,
+    Sibebar4Component,
+    ClientComponent,
+    ProduitComponent,
+    CampaignComponent,
+    CampaignTargetsComponent,
+    QuestionnaireComponent,
+    ReceiveResponsesComponent,
     
   
   ],
@@ -64,6 +79,7 @@ import { ViewprovidersComponent } from './viewproviders/viewproviders.component'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CommonModule
     
   ],
   providers: [DatePipe,

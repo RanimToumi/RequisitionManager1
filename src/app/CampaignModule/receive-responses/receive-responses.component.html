@@ -1,0 +1,68 @@
+<app-sibebar4></app-sibebar4>
+<app-header></app-header>
+
+<div class="content-body">
+  <div class="container-fluid mh-auto">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body px-0">
+            <div class="table-responsive">
+              &nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-success"><i class='fa fa-plus'></i> Add</button>
+              <table class="table table-sm mb-0 table-striped student-tbl">
+                <thead>
+                  <tr>
+                    <th class="custom-column">Questionnaire</th>
+                    <th class="custom-column">Title</th>
+                    <th class="custom-column">Description</th>
+                    <th class="custom-column">Company name</th>
+                    <th class="custom-column">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="questionnaires">
+                  <tr *ngFor="let questionnaire of questionnaires">
+                    <td>{{ questionnaire.id }}</td>
+                    <td>{{ questionnaire.title }}</td>
+                    <td>{{ questionnaire.description }}</td>
+                    <td>{{ questionnaire.campaignName }}</td>
+                    <td>
+                      <button class="btn btn-success" (click)="openModal(questionnaire)">
+                        <i class="fa fa-check-circle"></i>&nbsp;View Response
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Modal -->
+<ng-container *ngIf="selectedQuestionnaire">
+    <div class="modal" [class.show]="selectedQuestionnaire">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Responses for Questionnaire {{ selectedQuestionnaire?.title }}</h5>
+            <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div *ngFor="let question of selectedQuestionnaire.questions">
+              <h4>{{ question.questionText }}</h4>
+              <ul>
+                <li *ngFor="let option of optionsArray(question.optionsWithCount)">
+                  {{ option.option }}: {{ option.count }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>

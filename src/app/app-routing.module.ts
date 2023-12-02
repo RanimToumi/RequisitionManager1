@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardMainComponent } from './admin-dashboard/admin-dashboard-main/admin-dashboard-main.component';
 import { RegisterEmployeesComponent } from './admin-dashboard/Employees/register-employees/register-employees.component';
@@ -23,6 +23,13 @@ import { OrganisationComponent } from './ComponentsEvent/organisation/organisati
 import { Sidebar3Component } from './sidebar3/sidebar3/sidebar3.component';
 import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component';
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
+import { ClientComponent } from './CampaignModule/client/client.component';
+import { ProduitComponent } from './CampaignModule/produit/produit.component';
+import { CampaignComponent } from './CampaignModule/campaign/campaign.component';
+import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionnaire.component';
+import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
+import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component';
+import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -47,9 +54,15 @@ const routes: Routes = [
   {path:'organisation', component:OrganisationComponent},
   {path:'sidebar3', component:Sidebar3Component},
   {path:'calendar', component:CalendarComponent},
-  {path:'viewprovider', component:ViewprovidersComponent}
-
-
+  {path:'viewprovider', component:ViewprovidersComponent},
+  // sahar 
+  {path:"clients",component:ClientComponent},
+  {path:"produits",component:ProduitComponent},
+  {path:"campaigns",component:CampaignComponent},
+  {path:"questionnaire/:companyId",component:QuestionnaireComponent},
+  {path:"campaign-targets",component:CampaignTargetsComponent},
+  {path:"sidebar4",component:Sibebar4Component},
+  {path:"receiveResponses",component:ReceiveResponsesComponent},
 
 
 ];

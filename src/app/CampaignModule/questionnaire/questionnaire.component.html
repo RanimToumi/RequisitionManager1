@@ -1,0 +1,17 @@
+<!-- Inside the form -->
+<div *ngFor="let question of questions" class="mb-4">
+  <p class="fw-bold">{{ question.questionText }}</p>
+  <div *ngFor="let option of question.options" class="form-check mb-2">
+    <input
+      class="form-check-input"
+      type="radio"
+      [id]="'radio'+option"
+      [name]="'question'+question.id"
+      [value]="option"
+      [(ngModel)]="userResponses[question.id]"
+    />
+    <label class="form-check-label" [for]="'radio'+option">{{ option }}</label>
+  </div>
+</div>
+<!-- ... -->
+<button type="button" class="btn btn-primary" (click)="submitResponses()">Submit</button>
