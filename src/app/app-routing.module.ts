@@ -4,7 +4,6 @@ import { AdminDashboardMainComponent } from './admin-dashboard/admin-dashboard-m
 import { RegisterEmployeesComponent } from './admin-dashboard/Employees/register-employees/register-employees.component';
 import { ViewEmployeesComponent } from './admin-dashboard/Employees/view-employees/view-employees.component';
 import { CategoryComponent } from './category/category.component';
-
 import { ListProductsComponent } from './list-products/list-products.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
@@ -30,6 +29,8 @@ import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionn
 import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
 import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component';
 import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
+import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
+import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -62,6 +63,8 @@ const routes: Routes = [
   {path:"questionnaire/:companyId",component:QuestionnaireComponent},
   {path:"campaign-targets",component:CampaignTargetsComponent},
   {path:"sidebar4",component:Sibebar4Component},
+  {path:"register-tfa",component:RegisterTfaComponent},
+  {path:"login-tfa",component:LoginTfaComponent},
   {path:"receiveResponses",component:ReceiveResponsesComponent},
 
 

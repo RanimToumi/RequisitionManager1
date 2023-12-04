@@ -55,11 +55,16 @@
           <div class="modal-body">
             <div *ngFor="let question of selectedQuestionnaire.questions">
               <h4>{{ question.questionText }}</h4>
-              <ul>
-                <li *ngFor="let option of optionsArray(question.optionsWithCount)">
-                  {{ option.option }}: {{ option.count }}
-                </li>
-              </ul>
+              <div class="card">
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let option of question.optionsWithCount | keyvalue">
+                      {{ option.key }}
+                      <span class="badge bg-primary rounded-pill">{{ option.value }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,91 @@
+<app-sibebar4></app-sibebar4>
+<app-header></app-header>
+<div class="content-body">
+    <div class="container-fluid mh-auto">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body px-0">
+                        <div class="table-responsive">
+
+                            <div class="col-12">
+                                <form class="card"  (ngSubmit)="registerUser()">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Add Product</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row form-material">
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label class="form-label">Firstname<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input type="text" class="form-control" placeholder="fistanem" id="firstname"
+                                                    [(ngModel)]="registerRequest.firstname" required>
+                                            </div>
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label class="form-label">Lastname<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input type="text" class="form-control" placeholder="lastname" id="lastname"
+                                                    [(ngModel)]="registerRequest.lastname" required>
+                                            </div>
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label class="form-label">Email<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input type="text" class="form-control" placeholder="email" id="email"
+                                                    [(ngModel)]="registerRequest.email" required>
+                                            </div>
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label class="form-label">Role<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input type="text" class="form-control" placeholder="role" id="role"
+                                                    [(ngModel)]="registerRequest.role" required>
+                                            </div>
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label class="form-label">Password<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input type="password" class="form-control" placeholder="password" id="password"
+                                                    [(ngModel)]="registerRequest.password" required>
+                                            </div>
+                                            <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <label for="rememberMe" class="form-label">Enable 2FA (Two Factors Authentication)<span
+                                                        style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                                                <input id="rememberMe" name="rememberMe" type="checkbox" [(ngModel)]="registerRequest.tfaEnabled" required>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="submit" class="btn btn-warning"
+                                                    >
+                                                        <i class="fa fa-plus"></i> Add
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container" *ngIf="authResponse.tfaEnabled">
+
+    <div class="success-message-panel" *ngIf="message">
+        <div class="success-icon">&#10004;</div>
+        <div class="success-message">{{message}}</div>
+    </div>
+
+    <h2>Set Up Two-Factor Authentication</h2>
+    <div class="qr-code">
+        <img [src]="authResponse.secretImageUri" alt="QR Code">
+    </div>
+    <div class="form-group">
+        <label for="validationCode">Enter 6 digits Validation Code Generated by the app</label>
+        <input type="text" id="validationCode" name="validationCode" required [(ngModel)]="otpCode">
+    </div>
+    <button type="button" (click)="verifyTfa()" [class.button-disabled]="otpCode.length < 6">Verify code</button>
+</div>

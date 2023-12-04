@@ -35,6 +35,9 @@ import { CampaignComponent } from './CampaignModule/campaign/campaign.component'
 import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
 import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionnaire.component';
 import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
+import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
+import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
+import { Header4Component } from './CampaignModule/header4/header4.component';
 
 
 
@@ -71,6 +74,9 @@ import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/re
     CampaignTargetsComponent,
     QuestionnaireComponent,
     ReceiveResponsesComponent,
+    RegisterTfaComponent,
+    LoginTfaComponent,
+    Header4Component,
     
   
   ],
