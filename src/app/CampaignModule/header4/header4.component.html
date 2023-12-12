@@ -1,26 +1,23 @@
 <nav class="navbar">
-    <div class="container">
-      <div class="left-section">
-        <a href="#" class="logo">Marketing Module</a>
-      </div>
-      <div class="right-section">
-        <ul class="nav-links">
-          <li>
-            <a href="#">
-              <i class="fas fa-bell"></i> <!-- Notification icon -->
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-user"></i> <!-- Connected user icon -->
-              John Doe <!-- User name -->
-            </a>
-          </li>
-          <li>
-            <a href="#">Logout</a> <!-- Log out link -->
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <div class="left-section">
+      <a href="#" class="logo">Marketing Module</a>
     </div>
-  </nav>
-  
+    <div class="right-section">
+      <ul class="nav-links">
+        <li class="dropdown">
+          
+        </li>
+        <li class="user-section">
+          <a href="#">
+            <i *ngIf="isLoggedIn"  class="fas fa-user"></i> <!-- Connected user icon -->
+            <span>{{connectUser.firstname}}&nbsp;{{connectUser.lastname}}</span> <!-- User name -->
+          </a>
+        </li>
+        <li>
+          <a style="cursor: pointer;" *ngIf="isLoggedIn" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a> <!-- Log out link -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

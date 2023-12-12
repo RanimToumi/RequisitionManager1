@@ -1,12 +1,11 @@
 <app-sibebar4></app-sibebar4>
-<app-header></app-header>
+<app-header4></app-header4>
 <div class="content-body">
     <div class="container-fluid mh-auto">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h2>Create Campaign</h2>
                         <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                             <label class="form-label">Campaign Name : </label>&nbsp;{{campaign.name}}
@@ -56,7 +55,6 @@
                             <button type="submit" class="btn btn-primary" (click)="applyFilters()">Apply
                                 Filters</button>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -103,21 +101,22 @@
                                                     - {{ option }}
                                                 </p>
                                             </div>
-
-                                            <button type="button" class="btn btn-primary" (click)="toggleAddOption(i)">
+                                            <button  class="btn btn-primary" (click)="toggleAddOption(i)">
                                                 <i class="fas fa-plus-circle"></i> Add Option
-                                            </button>
+                                            </button> 
                                             <div *ngIf="question.showAddOption" class="new-option">
-                                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                <div >
+                                                    <br>
                                                     <input style="width: 200px;" type="text" class="form-control"
-                                                        placeholder="Enter option" [(ngModel)]="newOptionText"><br>
+                                                        placeholder="Enter option" [(ngModel)]="newOptionText">
                                                     <button type="button" class="btn btn-primary"
                                                         (click)="addOption(i)">Confirm</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                    <div >
+                                        <br>
                                         <input style="width: 200px;" type="text" class="form-control"
                                             placeholder="Enter your question" [(ngModel)]="newQuestionText"><br>
                                         <button type="button" class="btn btn-primary" (click)="addQuestion()">
@@ -125,10 +124,7 @@
                                         </button><br>
                                     </div>
                                 </div>
-
                             </form>
-
-
                         </div>
                     </div>
                 </div>
@@ -138,9 +134,9 @@
                 <div class="col-lg-5"></div>
                 <div class="col-lg-6">
                     <button type="submit" class="btn btn-primary"
-                        (click)="addQuestionnaire();addClientsToCampaign()">Launch
-                        Campaign</button>
+                        (click)="addQuestionnaire();addClientsToCampaign()">Create Campaign</button>
                 </div>
             </div>
         </div>
     </div>
+    <br>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Questionnaire } from '../../models/Questionnaire';
@@ -9,13 +9,20 @@ import { Response  as MyResponse} from '../../models/Response';
 })
 export class QuestionnaireService {
   apiBaseUrl=environment.apiBaseUrlMarketing
+  private token = localStorage.getItem('token');
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  }
 
   constructor(private http:HttpClient) { }
   getQuestionnaires(){
-    return this.http.get<Questionnaire[]>(`${this.apiBaseUrl}/api/questionnaire/all`)
+    const headers = this.getHeaders();
+    return this.http.get<Questionnaire[]>(`${this.apiBaseUrl}/api/questionnaire/all`, { headers})
   }
   addQuestionnaire(questionnaire:Questionnaire){
-    return this.http.post<Questionnaire>(`${this.apiBaseUrl}/api/questionnaire/add`,questionnaire)
+    const headers = this.getHeaders();
+    return this.http.post<Questionnaire>(`${this.apiBaseUrl}/api/questionnaire/add`,questionnaire, { headers})
   }
   addResponseToQuestion(response:MyResponse){
     return this.http.post<MyResponse>(`${this.apiBaseUrl}/api/response/add`,response)

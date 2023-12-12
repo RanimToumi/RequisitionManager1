@@ -1,5 +1,5 @@
+<app-header4></app-header4>
 <app-sibebar4></app-sibebar4>
-<app-header></app-header>
 
 <div class="content-body">
     <div class="container-fluid mh-auto">
@@ -17,6 +17,7 @@
                                         <th class="custom-column">Name</th>
                                         <th class="custom-column">Description</th>
                                         <th class="custom-column">Product</th>
+                                        <th class="custom-column">Status</th>
                                         <th class="custom-column">Action</th>
                                     </tr>
                                 </thead>
@@ -26,17 +27,18 @@
                                         <td>{{c.name}}</td>
                                         <td>{{c.description}}</td>
                                         <td>{{c.product_id}}</td>
+                                        <td>{{c.status}}</td>
                                         <td>
-                                            <button *ngIf="!isLaunched[i]" class="btn btn-success shadow sharp"
+                                            <button *ngIf="!(c.status=='Launched') && !isLaunched[i]" class="btn btn-success shadow sharp"
                                                 (click)="launch(c.id, i)" [disabled]="isRequesting[i]">
                                                 <i *ngIf="isRequesting[i]" class="fa fa-spinner fa-spin"></i>
                                                 <!-- Spinner icon -->
-                                                <i *ngIf="!isRequesting[i] && !isLaunched[i]" class="fa fa-rocket"></i>
+                                                <i *ngIf="!isRequesting[i] && !(c.status=='Launched')" class="fa fa-rocket"></i>
                                                 <!-- Rocket icon -->
-                                                <span *ngIf="!isRequesting[i] && !isLaunched[i]">Launch</span>
+                                                <span *ngIf="!isRequesting[i] && !(c.status=='Launched')">Launch</span>
                                                 <!-- Button text -->
                                             </button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span *ngIf="isLaunched[i]"
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span *ngIf="c.status=='Launched' || isLaunched[i]"
                                                 style="width: 30px;" class="fa fa-check text-success"></span>
                                             <!-- Display green check icon when launched -->
 

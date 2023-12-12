@@ -43,13 +43,11 @@ export class CampaignComponent implements OnInit {
   getProducts(){
     this.productService.getProducts().subscribe(
       (response)=>this.products=response,
-      (error:HttpErrorResponse)=>alert(error.message)
     );
   }
   getCampaigns(){
     this.campaignService.getCampaigns().subscribe(
       (response)=> this.campaigns=response,
-      (error:HttpErrorResponse)=> alert(error.message)
     )
   }
  /* getCampaignsById(){

@@ -19,3 +19,18 @@
   color: #ffffff; /* Set your desired menu title color here */
 }
 
+.svg-icon {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #f6c746;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '../models/Question';
 import { Response as MyResponse } from '../models/Response';
 import { QuestionnaireService } from '../services/questionnaireService/questionnaire.service';
@@ -17,7 +17,7 @@ export class QuestionnaireComponent implements OnInit {
   companyId: number=0;
   userResponses: { [key: number]: string } = {};
 
-  constructor(private questionnaireService:QuestionnaireService,private route: ActivatedRoute) { }
+  constructor(private questionnaireService:QuestionnaireService,private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -58,7 +58,7 @@ export class QuestionnaireComponent implements OnInit {
   
       this.questionnaireService.addResponseToQuestion(responsePayload).subscribe(
         (savedResponse) => {
-          console.log('Response saved:', savedResponse);
+          console.log('Response saved:', savedResponse); this.router.navigate(['/success'])
         },
         (error) => {
           console.error('Error saving response:', error);

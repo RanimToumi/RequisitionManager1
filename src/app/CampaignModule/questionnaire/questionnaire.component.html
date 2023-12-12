@@ -1,4 +1,6 @@
-<!-- Inside the form -->
+<br><br>
+<div class="form1-container">
+  <h2 class="form-title">{{questionnaire.title}}</h2>
 <div *ngFor="let question of questions" class="mb-4">
   <p class="fw-bold">{{ question.questionText }}</p>
   <div *ngFor="let option of question.options" class="form-check mb-2">
@@ -13,5 +15,6 @@
     <label class="form-check-label" [for]="'radio'+option">{{ option }}</label>
   </div>
 </div>
-<!-- ... -->
-<button type="button" class="btn btn-primary" (click)="submitResponses()">Submit</button>
+<p class="engagement-message">Your opinions matter! 🌟</p>
+<button type="button" class="btn btn-primary submit-btn" (click)="submitResponses()">Submit</button>
+</div>

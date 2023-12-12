@@ -31,7 +31,7 @@ export class LoginTfaComponent implements OnInit {
           this.authResponse = response;
           if (!this.authResponse.tfaEnabled) {
             localStorage.setItem('token', response.accessToken as string);
-            this.router.navigate(['welcome']);
+            this.router.navigate(['campaigns']);
           }
         }
       });

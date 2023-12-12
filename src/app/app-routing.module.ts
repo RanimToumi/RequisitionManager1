@@ -31,6 +31,7 @@ import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component'
 import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
 import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
+import { SuccessComponent } from './CampaignModule/success/success.component';
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -56,7 +57,8 @@ const routes: Routes = [
   {path:'sidebar3', component:Sidebar3Component},
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
-  // sahar 
+  // sahar
+  {path:"success",component:SuccessComponent}, 
   {path:"clients",component:ClientComponent},
   {path:"produits",component:ProduitComponent},
   {path:"campaigns",component:CampaignComponent},
