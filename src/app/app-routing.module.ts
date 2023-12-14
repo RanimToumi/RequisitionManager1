@@ -1,10 +1,9 @@
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardMainComponent } from './admin-dashboard/admin-dashboard-main/admin-dashboard-main.component';
 import { RegisterEmployeesComponent } from './admin-dashboard/Employees/register-employees/register-employees.component';
 import { ViewEmployeesComponent } from './admin-dashboard/Employees/view-employees/view-employees.component';
 import { CategoryComponent } from './category/category.component';
-
 import { ListProductsComponent } from './list-products/list-products.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
@@ -23,6 +22,17 @@ import { OrganisationComponent } from './ComponentsEvent/organisation/organisati
 import { Sidebar3Component } from './sidebar3/sidebar3/sidebar3.component';
 import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component';
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
+
+import { ClientComponent } from './CampaignModule/client/client.component';
+import { ProduitComponent } from './CampaignModule/produit/produit.component';
+import { CampaignComponent } from './CampaignModule/campaign/campaign.component';
+import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionnaire.component';
+import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
+import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component';
+import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
+import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
+import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
+
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
 import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
@@ -54,6 +64,19 @@ const routes: Routes = [
   {path:'sidebar3', component:Sidebar3Component},
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
+
+  // sahar
+  {path:"success",component:SuccessComponent}, 
+  {path:"clients",component:ClientComponent},
+  {path:"produits",component:ProduitComponent},
+  {path:"campaigns",component:CampaignComponent},
+  {path:"questionnaire/:companyId",component:QuestionnaireComponent},
+  {path:"campaign-targets",component:CampaignTargetsComponent},
+  {path:"sidebar4",component:Sibebar4Component},
+  {path:"register-tfa",component:RegisterTfaComponent},
+  {path:"login-tfa",component:LoginTfaComponent},
+  {path:"receiveResponses",component:ReceiveResponsesComponent},
+
   {path:'registerlogin', component:RegisterLoginComponent},
   {path:'loginregister', component:LoginRegisterComponent},
   {path:'tasks', component:TasksComponent},
@@ -63,12 +86,6 @@ const routes: Routes = [
   {path:'projects', component:ProjectComponent},
   {path:'auth', component:AuthComponent},
   
-
-
-
-
-
-
 ];
 
 @NgModule({
