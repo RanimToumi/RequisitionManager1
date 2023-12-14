@@ -50,8 +50,9 @@ public organisateurs: Organisateur[]=[];
     addForm.resetForm();
 
   }
-  toggleEditing(id:number) {
+  toggleEditing(organisation: Organisation) {
     this.isEditing = !this.isEditing;
+    
   }
 
   getAllOrganisations (){

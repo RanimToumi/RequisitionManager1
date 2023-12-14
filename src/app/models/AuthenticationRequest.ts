@@ -1,6 +1,6 @@
 import { Role } from "./Role";
 
-export interface AuthenticationRequest {
+export class AuthenticationRequest {
     email?: string;
     password?: string;
     role?: Role;

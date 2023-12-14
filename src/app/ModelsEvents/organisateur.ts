@@ -8,4 +8,6 @@ export class Organisateur {
    public adresse!: string;
    public cin!: string;
    public phoneNumber!: string;
+   public password!: String;
+   public role!: String;
 }

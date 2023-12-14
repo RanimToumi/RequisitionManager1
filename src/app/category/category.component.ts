@@ -52,15 +52,15 @@ export class CategoryComponent implements OnInit {
   }
 
   addCategory(addForm: NgForm) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTk4MTQ4NzMsImV4cCI6MTcwNzgxNDg3M30.iTwPn1fUoBobFck1g9gNrwkRdXmWrNapfuk1IKNxhrg'
-      })
-    };
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type': 'application/json',
+    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTk4MTQ4NzMsImV4cCI6MTcwNzgxNDg3M30.iTwPn1fUoBobFck1g9gNrwkRdXmWrNapfuk1IKNxhrg'
+    //   })
+    // };
     if (addForm.valid) {
       // Vérifiez si le formulaire est valide avant d'ajouter le fournisseur
-      this.categoryService.AddCategory(this.category, httpOptions).subscribe(
+      this.categoryService.AddCategory(this.category).subscribe(
         () => {
           alert('category is added successfully');
           // Réinitialisez le formulaire après l'ajout si nécessaire
@@ -76,13 +76,13 @@ export class CategoryComponent implements OnInit {
 
 
   UpdateCategory(category: Category) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTk4MTQ4NzMsImV4cCI6MTcwNzgxNDg3M30.iTwPn1fUoBobFck1g9gNrwkRdXmWrNapfuk1IKNxhrg'
-      })
-    };
-    this.categoryService.UpdateCategory(category, httpOptions).subscribe(
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type': 'application/json',
+    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTk4MTQ4NzMsImV4cCI6MTcwNzgxNDg3M30.iTwPn1fUoBobFck1g9gNrwkRdXmWrNapfuk1IKNxhrg'
+    //   })
+    // };
+    this.categoryService.UpdateCategory(category).subscribe(
       () => {
         alert('successful update.');
 
@@ -95,15 +95,10 @@ export class CategoryComponent implements OnInit {
   }
 
   DeleteCategory(idCategory: number) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTk4MTQ4NzMsImV4cCI6MTcwNzgxNDg3M30.iTwPn1fUoBobFck1g9gNrwkRdXmWrNapfuk1IKNxhrg'
-      })
-    };
-    this.categoryService.DeleteCategory(idCategory, httpOptions).subscribe(
+   
+    this.categoryService.DeleteCategory(idCategory).subscribe(
       () => {
-        alert("provider"+idCategory +"is deleted  successfully");
+        alert("gategory"+idCategory +"is deleted  successfully");
 
         // La suppression a réussi, mettez à jour la liste des fournisseurs
 

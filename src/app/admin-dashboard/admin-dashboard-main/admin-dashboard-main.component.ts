@@ -81,7 +81,7 @@ email: any = {}; // Assurez-vous que la classe Email est correctement définie
       },
       (error: HttpErrorResponse) => {
         console.error('Error sending email:', error);
-        alert('Failed to send email. Please check the email service.');
+        alert(`Failed to send email. Error: ${error.message}`);
       }
     );
   }
