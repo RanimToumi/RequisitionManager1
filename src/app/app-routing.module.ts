@@ -25,6 +25,10 @@ import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
+import { ProjectComponent } from './TBSgestionProjet/project/project.component';
+import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
+
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -51,7 +55,16 @@ const routes: Routes = [
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
   {path:'registerlogin', component:RegisterLoginComponent},
-  {path:'loginregister', component:LoginRegisterComponent}
+  {path:'loginregister', component:LoginRegisterComponent},
+  {path:'tasks', component:TasksComponent},
+  {path:'projects', component:ProjectComponent},
+  {path:'auth', component:AuthComponent},
+  {path:'tasks', component:TasksComponent},
+  {path:'projects', component:ProjectComponent},
+  {path:'auth', component:AuthComponent},
+  
+
+
 
 
 
