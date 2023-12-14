@@ -23,6 +23,7 @@ export class CampaignComponent implements OnInit {
   selectedProductId=null
   isRequesting: boolean[] = Array(this.campaigns.length).fill(false);
   isLaunched: boolean[] = Array(this.campaigns.length).fill(false);
+  product:any={}
 
   constructor(private campaignService:CampaignService,private productService:ProductService,private clientService:ClientService,private router: Router) { }
 
@@ -45,6 +46,18 @@ export class CampaignComponent implements OnInit {
       (response)=>this.products=response,
     );
   }
+  getProductById(id: number): Promise<Product> {
+  return new Promise((resolve, reject) => {
+    this.productService.getProductById(id).subscribe(
+      (data: Product) => {
+        resolve(data); // Resolve the promise with the fetched data
+      },
+      (error) => {
+        reject(error); // Reject the promise if an error occurs
+      }
+    );
+  });
+}
   getCampaigns(){
     this.campaignService.getCampaigns().subscribe(
       (response)=> this.campaigns=response,

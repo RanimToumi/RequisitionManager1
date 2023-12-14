@@ -13,6 +13,9 @@ export class ProductService {
   getProducts(){
     return this.http.get<Product[]>(`${this.apiBaseUrl}/api/product/all`)
   }
+  getProductById(id:number){
+    return this.http.get<Product>(`${this.apiBaseUrl}/api/find/${id}`)
+  }
   addProduct(product:Product){
     return this.http.post<Product>(`${this.apiBaseUrl}/api/product/add`,product)
   }

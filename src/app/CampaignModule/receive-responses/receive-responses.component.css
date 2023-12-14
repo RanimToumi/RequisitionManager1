@@ -1,0 +1,9 @@
+
+.bt{
+  color: #767a78;
+  padding:5px 20px;background: transparent;border: 2px solid rgb(116, 115, 111);outline: none; cursor: pointer;align-items: center;border-radius: 15px;
+}
+
+.bt:hover{
+  background-color: rgb(223, 244, 247);   
+}
