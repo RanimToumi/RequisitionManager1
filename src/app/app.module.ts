@@ -30,6 +30,9 @@ import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
+import { DepartementComponent } from './components/departement/departement.component';
 
 
 
@@ -60,6 +63,9 @@ import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-r
     ViewprovidersComponent,
     RegisterLoginComponent,
     LoginRegisterComponent,
+    EmployeesComponent,
+    LoginemployeeComponent,
+    DepartementComponent,
     
   
   ],

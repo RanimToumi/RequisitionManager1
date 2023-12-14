@@ -25,6 +25,9 @@ import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { DepartementComponent } from './components/departement/departement.component';
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -51,7 +54,10 @@ const routes: Routes = [
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
   {path:'registerlogin', component:RegisterLoginComponent},
-  {path:'loginregister', component:LoginRegisterComponent}
+  {path:'loginregister', component:LoginRegisterComponent},
+  {path:'loginemployees',component:LoginemployeeComponent},
+  {path:'employees',component:EmployeesComponent},
+  {path:'departements',component:DepartementComponent},
 
 
 

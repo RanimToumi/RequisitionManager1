@@ -6,7 +6,8 @@ export const environment = {
   production: true,
 
   apiBaseUrl: 'Http://localhost:8088',
-  apiBasrUrlEvent: 'Http://localhost:8085'
+  apiBasrUrlEvent: 'Http://localhost:8085',
+  apiBaseUrl2: 'Http://localhost:9099',
   //apiBaseUrl: 'Http://localhost:8080'
 
 };
