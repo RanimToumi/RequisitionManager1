@@ -17,7 +17,7 @@ import { ProviderComponent } from './provider/provider.component';
 import { HeaderComponent } from './header/header.component';
 import { CategoryComponent } from './category/category.component';
 import { Sidebar2Component } from './sidebar2/sidebar2.component';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ViewemployeeComponent } from './viewemployee/viewemployee.component';
 import { EmailComponent } from './email/email.component';
 import { TwofactorComponent } from './twofactor/twofactor.component';
@@ -28,11 +28,31 @@ import { OrganisateurComponent } from './ComponentsEvent/organisateur/organisate
 import { Sidebar3Component } from './sidebar3/sidebar3/sidebar3.component';
 import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component';
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
+
+import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component';
+import { ClientComponent } from './CampaignModule/client/client.component';
+import { ProduitComponent } from './CampaignModule/produit/produit.component';
+import { CampaignComponent } from './CampaignModule/campaign/campaign.component';
+import { CampaignTargetsComponent } from './CampaignModule/campaign-targets/campaign-targets.component';
+import { QuestionnaireComponent } from './CampaignModule/questionnaire/questionnaire.component';
+import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
+import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
+import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
+import { Header4Component } from './CampaignModule/header4/header4.component';
+import { SuccessComponent } from './CampaignModule/success/success.component';
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+
 import { EmployeesComponent } from './components/employees/employees.component';
 import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
 import { DepartementComponent } from './components/departement/departement.component';
+
+import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
+import { ProjectComponent } from './TBSgestionProjet/project/project.component';
+import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
+import { RxStompService } from '@stomp/ng2-stompjs';
+import { NotifierModule } from 'angular-notifier';
+
 
 
 
@@ -61,23 +81,50 @@ import { DepartementComponent } from './components/departement/departement.compo
     Sidebar3Component,
     CalendarComponent,
     ViewprovidersComponent,
+
+    Sibebar4Component,
+    ClientComponent,
+    ProduitComponent,
+    CampaignComponent,
+    CampaignTargetsComponent,
+    QuestionnaireComponent,
+    ReceiveResponsesComponent,
+    RegisterTfaComponent,
+    LoginTfaComponent,
+    Header4Component,
+    SuccessComponent,
     RegisterLoginComponent,
     LoginRegisterComponent,
+    
     EmployeesComponent,
     LoginemployeeComponent,
     DepartementComponent,
     
-  
+    TasksComponent,
+    ProjectComponent,
+    AuthComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+
+    CommonModule
     
+
+    NotifierModule
+
+
+
+
   ],
   providers: [DatePipe,
-    LocalStorageService],
+    LocalStorageService,
+    RxStompService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
