@@ -35,6 +35,11 @@ import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.componen
 
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+
+import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { DepartementComponent } from './components/departement/departement.component';
+
 import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
 import { ProjectComponent } from './TBSgestionProjet/project/project.component';
 import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
@@ -64,6 +69,13 @@ const routes: Routes = [
   {path:'sidebar3', component:Sidebar3Component},
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
+  
+ //hadil
+  {path:'registerlogin', component:RegisterLoginComponent},
+  {path:'loginregister', component:LoginRegisterComponent},
+  {path:'loginemployees',component:LoginemployeeComponent},
+  {path:'employees',component:EmployeesComponent},
+  {path:'departements',component:DepartementComponent},
 
   // sahar
   {path:"success",component:SuccessComponent}, 

@@ -42,13 +42,16 @@ import { Header4Component } from './CampaignModule/header4/header4.component';
 import { SuccessComponent } from './CampaignModule/success/success.component';
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+
+import { EmployeesComponent } from './components/employees/employees.component';
+import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
+import { DepartementComponent } from './components/departement/departement.component';
+
 import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
 import { ProjectComponent } from './TBSgestionProjet/project/project.component';
 import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
 import { RxStompService } from '@stomp/ng2-stompjs';
 import { NotifierModule } from 'angular-notifier';
-
-
 
 
 
@@ -92,12 +95,14 @@ import { NotifierModule } from 'angular-notifier';
     SuccessComponent,
     RegisterLoginComponent,
     LoginRegisterComponent,
+    
+    EmployeesComponent,
+    LoginemployeeComponent,
+    DepartementComponent,
+    
     TasksComponent,
     ProjectComponent,
     AuthComponent,
-
-
-
 
 
   ],

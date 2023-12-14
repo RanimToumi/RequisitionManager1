@@ -8,7 +8,9 @@ export const environment = {
   apiBaseUrlMarketing: 'Http://localhost:8080',
   apiBaseUrl: 'Http://localhost:8088',
   apiBasrUrlEvent: 'Http://localhost:8085',
+  apiBaseUrl2: 'Http://localhost:9099',
   apiBaseUrlTask:'Http://localhost:8022'
+
 
 };
 

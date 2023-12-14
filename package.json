@@ -21,9 +21,11 @@
     "@angular/router": "~13.2.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "@stomp/ng2-stompjs": "^8.0.0",
+
     "angular-notifier": "^11.0.0",
     "chart.js": "^2.9.4",
     "rxjs": "~7.5.0",
+    "socket.io-client": "^4.7.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
