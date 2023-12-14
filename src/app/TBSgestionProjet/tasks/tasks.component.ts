@@ -144,7 +144,7 @@ export class TasksComponent implements OnInit {
     UpdateTask(task: Task) {
       this.taskService.UpdateTask(task,task.id).subscribe(
         () => {
-          this.notifierService.notify('success', 'Task is updated succefully!');
+          alert('task successfully updated.');
 
         },
         (error) => {
@@ -213,7 +213,6 @@ printReport():void {
 
 
 
-//charjs
 getChar(){
 
   var myChart = new Chart("myChart", {
