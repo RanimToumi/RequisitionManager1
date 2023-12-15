@@ -39,6 +39,7 @@ import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
 import { Header4Component } from './CampaignModule/header4/header4.component';
 import { SuccessComponent } from './CampaignModule/success/success.component';
+import { FieldComponent } from './CampaignModule/field/field.component';
 
 
 
@@ -79,6 +80,7 @@ import { SuccessComponent } from './CampaignModule/success/success.component';
     LoginTfaComponent,
     Header4Component,
     SuccessComponent,
+    FieldComponent,
     
   
   ],

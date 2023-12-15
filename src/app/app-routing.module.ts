@@ -32,6 +32,7 @@ import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/re
 import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
 import { SuccessComponent } from './CampaignModule/success/success.component';
+import { FieldComponent } from './CampaignModule/field/field.component';
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path:'viewprovider', component:ViewprovidersComponent},
   // sahar
   {path:"success",component:SuccessComponent}, 
+  {path:"field",component:FieldComponent}, 
   {path:"clients",component:ClientComponent},
   {path:"produits",component:ProduitComponent},
   {path:"campaigns",component:CampaignComponent},

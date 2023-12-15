@@ -10,7 +10,7 @@ import { AuthenticationService } from '../services/AuthService/authentication.se
 export class Sibebar4Component implements OnInit {
   private token = localStorage.getItem('token')||'';
   connectUser:any={}
-  isLoggedIn=false
+  isLoggedIn=false  //
 
   constructor(private authService:AuthenticationService) { }
 

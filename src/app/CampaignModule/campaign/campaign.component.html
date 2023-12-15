@@ -26,7 +26,7 @@
                                         <td>{{c.id}}</td>
                                         <td>{{c.name}}</td>
                                         <td>{{c.description}}</td>
-                                        <td>{{c.product_id}}</td>
+                                        <td>{{getProductNameById(c.product_id)}}</td>
                                         <td>{{c.status}}</td>
                                         <td>
                                             <button *ngIf="!(c.status=='Launched') && !isLaunched[i]" class="btn btn-success shadow sharp"
@@ -74,11 +74,7 @@
                                                     <input type="text" class="form-control" placeholder="Campaign Text"
                                                         id="campaignText" [(ngModel)]="campaign.campaignText" required>
                                                 </div>
-                                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
-                                                    <label class="form-label">End Date</label>
-                                                    <input type="date" class="form-control" id="endDate"
-                                                        [(ngModel)]="campaign.endDate" name="endDate">
-                                                </div>
+                                                
                                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                                     <label class="form-label">Select Product</label>
                                                     <select class="form-select" [(ngModel)]="campaign.product_id"

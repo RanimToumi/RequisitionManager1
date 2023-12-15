@@ -24,6 +24,7 @@ export class CampaignComponent implements OnInit {
   isRequesting: boolean[] = Array(this.campaigns.length).fill(false);
   isLaunched: boolean[] = Array(this.campaigns.length).fill(false);
   product:any={}
+  prod:any={}
 
   constructor(private campaignService:CampaignService,private productService:ProductService,private clientService:ClientService,private router: Router) { }
 
@@ -32,7 +33,7 @@ export class CampaignComponent implements OnInit {
     this.getProducts()
   }
   toggleForm() {
-    this.showForm = !this.showForm; // Basculez entre afficher et masquer le formulaire
+    this.showForm = !this.showForm; 
   }
   CloseForm(addForm: NgForm) {
     this.toggleForm() ;
@@ -46,18 +47,14 @@ export class CampaignComponent implements OnInit {
       (response)=>this.products=response,
     );
   }
-  getProductById(id: number): Promise<Product> {
-  return new Promise((resolve, reject) => {
+  getProductNameById(id: number): string {
+    const product = this.products.find(product => product.id === id);
+    return product ? product.name : '';
+  }
+  getProductById(id:number):any{
     this.productService.getProductById(id).subscribe(
-      (data: Product) => {
-        resolve(data); // Resolve the promise with the fetched data
-      },
-      (error) => {
-        reject(error); // Reject the promise if an error occurs
-      }
-    );
-  });
-}
+      (data)=>{this.prod= data})
+  }
   getCampaigns(){
     this.campaignService.getCampaigns().subscribe(
       (response)=> this.campaigns=response,

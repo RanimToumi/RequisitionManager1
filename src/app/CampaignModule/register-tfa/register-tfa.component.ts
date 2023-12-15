@@ -11,7 +11,10 @@ import { AuthenticationService } from '../services/AuthService/authentication.se
   styleUrls: ['./register-tfa.component.css']
 })
 export class RegisterTfaComponent implements OnInit {
-
+  roleOptions: { value: string }[] = [
+    {value: 'ADMIN' },
+    { value: 'MANAGER' },
+  ];
   registerRequest: User = {};
   authResponse: AuthenticationResponse = {};
   message = '';
@@ -31,7 +34,7 @@ export class RegisterTfaComponent implements OnInit {
       .subscribe(
         (response) => {
           if (response) {
-            {this.authResponse = response;alert(this.authResponse.tfaEnabled)}
+            {this.authResponse = response;}
           } else {
             // inform the user
             this.message = 'Account created successfully\nYou will be redirected to the Login page in 3 seconds';
@@ -52,10 +55,10 @@ export class RegisterTfaComponent implements OnInit {
     this.authService.verifyCode(verifyRequest)
       .subscribe({
         next: (response) => {
-          this.message = 'Account created successfully\nYou will be redirected to the Welcome page in 3 seconds';
+          this.message = 'Account created successfully';
           setTimeout(() => {
             localStorage.setItem('token', response.accessToken as string);
-            this.router.navigate(['welcome']);
+            this.router.navigate(['register-tfa']);
           }, 3000);
         }
       });

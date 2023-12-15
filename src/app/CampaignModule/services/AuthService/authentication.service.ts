@@ -24,7 +24,7 @@ export class AuthenticationService {
   ) {
     const headers = this.getHeaders();
     return this.http.post<AuthenticationResponse>
-    (`${this.baseUrl}/api/authentication/register`, registerRequest, { headers});
+    (`${this.baseUrl}/api/authentication/register`, registerRequest,{headers});
   }
 
   login(
