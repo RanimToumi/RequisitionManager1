@@ -37,13 +37,12 @@ export class RegisterTfaComponent implements OnInit {
             {this.authResponse = response;}
           } else {
             // inform the user
-            this.message = 'Account created successfully\nYou will be redirected to the Login page in 3 seconds';
+            this.message = 'Account created successfully';
             setTimeout(() => {
               this.router.navigate(['login-tfa']);
             }, 3000)
           }
       });
-
   }
 
   verifyTfa() {

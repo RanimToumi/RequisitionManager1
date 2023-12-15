@@ -33,7 +33,7 @@
                                                 (click)="launch(c.id, i)" [disabled]="isRequesting[i]">
                                                 <i *ngIf="isRequesting[i]" class="fa fa-spinner fa-spin"></i>
                                                 <!-- Spinner icon -->
-                                                <i *ngIf="!isRequesting[i] && !(c.status=='Launched')" class="fa fa-rocket"></i>
+                                                <i *ngIf="!isRequesting[i] && !(c.status=='Launched')" class="fa fa-rocket"></i>&nbsp;
                                                 <!-- Rocket icon -->
                                                 <span *ngIf="!isRequesting[i] && !(c.status=='Launched')">Launch</span>
                                                 <!-- Button text -->

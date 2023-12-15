@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body px-0">
                         <div class="table-responsive">
-                            &nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-success" (click)="toggleForm()"><i
+                            &nbsp;&nbsp;&nbsp; <button *ngIf="connectUser.role=='ADMIN'" type="button" class="btn btn-success" (click)="toggleForm()"><i
                                     class='fa fa-plus'></i> Add</button>
                             <table class="table table-sm mb-0 table-striped student-tbl">
                                 <thead>

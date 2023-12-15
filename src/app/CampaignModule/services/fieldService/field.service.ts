@@ -15,7 +15,7 @@ export class FieldService {
   }
   addField(field:Field){
     const headers = this.getHeaders();
-    return this.http.post<Field>(`${this.apiBaseUrl}/api/field/add`,field)
+    return this.http.post<Field>(`${this.apiBaseUrl}/api/field/add`,field,{headers})
   }
   constructor(private http:HttpClient) { }
   getFields(){

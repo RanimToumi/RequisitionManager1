@@ -23,6 +23,7 @@ export class FieldComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFields()
+    this.getUserByToken()
   }
   getUserByToken(){
     this.authService.getUserByToken(this.token).subscribe(
