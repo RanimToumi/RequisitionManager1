@@ -33,6 +33,10 @@ import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/re
 import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
 
+import { SuccessComponent } from './CampaignModule/success/success.component';
+import { FieldComponent } from './CampaignModule/field/field.component';
+
+
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
 
@@ -43,6 +47,7 @@ import { DepartementComponent } from './components/departement/departement.compo
 import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
 import { ProjectComponent } from './TBSgestionProjet/project/project.component';
 import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
+
 
 
 const routes: Routes = [
@@ -79,6 +84,7 @@ const routes: Routes = [
 
   // sahar
   {path:"success",component:SuccessComponent}, 
+  {path:"field",component:FieldComponent}, 
   {path:"clients",component:ClientComponent},
   {path:"produits",component:ProduitComponent},
   {path:"campaigns",component:CampaignComponent},

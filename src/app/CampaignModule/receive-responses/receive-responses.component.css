@@ -7,3 +7,19 @@
 .bt:hover{
   background-color: rgb(223, 244, 247);   
 }
+/* Additional CSS */
+.custom-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-dialog .modal-content {
+  width: 80%; /* Adjust the width as needed */
+  max-height: 80vh; /* Adjust the max-height to fit within the viewport */
+  overflow-y: auto;
+}
+
+.custom-dialog .modal-body {
+  padding: 20px; /* Adjust padding as needed */
+}

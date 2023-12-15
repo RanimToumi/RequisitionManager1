@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body px-0">
                         <div class="table-responsive">
-                            &nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-success" (click)="toggleForm()"><i
+                            &nbsp;&nbsp;&nbsp; <button *ngIf="connectUser.role=='ADMIN'" type="button" class="btn btn-success" (click)="toggleForm()"><i
                                     class='fa fa-plus'></i> Add</button>
                             <table class="table table-sm mb-0 table-striped student-tbl">
                                 <thead>
@@ -31,13 +31,12 @@
                                         <td>{{c.phone}}</td>
                                         <td>{{c.country}}</td>
                                         <td>{{c.gender}}</td>
-                                        <td>{{c.field_id}}</td>
+                                        <td>{{ getFieldNameById(c.field_id)}}</td>
                                         <td>
-                                            <a class="btn btn-primary shadow btn-xs sharp me-1"><i
+                                            <a *ngIf="connectUser.role=='ADMIN'" (click)="openModal(c)" class="btn btn-primary shadow btn-xs sharp me-1"><i
                                                     class='fa fa-pencil'></i></a>
-                                            <a class="btn btn-secondary shadow btn-xs sharp me-1"><i
-                                                    class='fa fa-recycle'></i></a>
-                                            <a class="btn btn-danger shadow btn-xs sharp"><i
+                                            
+                                            <a *ngIf="connectUser.role=='ADMIN'" (click)="deleteClient(c.id)" class="btn btn-danger shadow btn-xs sharp"><i
                                                     class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
@@ -79,9 +78,11 @@
                                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                                     <label class="form-label">Field of activity<span
                                                             style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Field of activity" id="field_id" name="field_id"
-                                                        [(ngModel)]="client.field_id" required>
+                                                            <select class="form-select" [(ngModel)]="client.field_id"
+                                                            name="selectedProductId">
+                                                            <option *ngFor="let field of fields" [value]="field.id">{{
+                                                                field.field }}</option>
+                                                        </select>
                                                 </div>
                                                 <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                                     <label class="form-label">Age<span
@@ -102,7 +103,7 @@
                                                         name="gender" [(ngModel)]="client.gender" value="Male"
                                                         checked="">Male &nbsp;&nbsp;
                                                     <input title="i" type="radio" name="optionsRadios" id="female"
-                                                        name="gender" [(ngModel)]="client.gender"
+                                                        name="gender" [(ngModel)]="client.gender" required
                                                         value="Female">Female&nbsp;&nbsp;
                                                 </div>
                                                 <div class="row">
@@ -131,3 +132,86 @@
         </div>
     </div>
 </div>
+<!-- Bootstrap Modal -->
+<ng-container *ngIf="selectedClient.id!==0">
+    <div class="modal" [class.show]="selectedClient">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Product</h5>
+            <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card-body">
+                <div class="row form-material">
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Firstname<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Firstname"
+                            id="firstname" [(ngModel)]="selectedClient.firstName" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Lastname<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Lastname"
+                            id="lastname" [(ngModel)]="selectedClient.lastName" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Email<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Email"
+                            id="email" [(ngModel)]="selectedClient.email" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Phone<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Phone" name=phone
+                            id="phone" [(ngModel)]="selectedClient.phone" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Field of activity<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control"
+                            placeholder="Field of activity" id="field_id" name="field_id"
+                            [(ngModel)]="selectedClient.field_id" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Age<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Age" id="age" name="age"
+                            [(ngModel)]="selectedClient.age" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Country<span
+                                style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label>
+                        <input type="text" class="form-control" placeholder="Country" id="country" name="country"
+                            [(ngModel)]="selectedClient.country" required>
+                    </div>
+                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                        <label class="form-label">Gender<span
+                            style="color: rgb(180, 16, 16); font-size: 10px; font-style: italic;">*</span></label> &nbsp;&nbsp;
+                        <input title="i" type="radio" name="optionsRadios" id="male"
+                            name="gender" [(ngModel)]="selectedClient.gender" value="Male"
+                            checked="">Male &nbsp;&nbsp;
+                        <input title="i" type="radio" name="optionsRadios" id="female"
+                            name="gender" [(ngModel)]="selectedClient.gender" required
+                            value="Female">Female&nbsp;&nbsp;
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-warning"
+                                 (click)="updateClient()">
+                                <i class="fa fa-plus"></i> Add
+                            </button>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>

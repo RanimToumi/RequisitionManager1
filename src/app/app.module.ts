@@ -40,6 +40,9 @@ import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
 import { Header4Component } from './CampaignModule/header4/header4.component';
 import { SuccessComponent } from './CampaignModule/success/success.component';
+
+import { FieldComponent } from './CampaignModule/field/field.component';
+
 import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
 import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
 
@@ -52,6 +55,7 @@ import { ProjectComponent } from './TBSgestionProjet/project/project.component';
 import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
 import { RxStompService } from '@stomp/ng2-stompjs';
 import { NotifierModule } from 'angular-notifier';
+
 
 
 
@@ -93,8 +97,11 @@ import { NotifierModule } from 'angular-notifier';
     LoginTfaComponent,
     Header4Component,
     SuccessComponent,
+
+    FieldComponent,
     RegisterLoginComponent,
     LoginRegisterComponent,
+
     
     EmployeesComponent,
     LoginemployeeComponent,
