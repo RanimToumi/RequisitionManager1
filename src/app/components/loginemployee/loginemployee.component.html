@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <body
+    class="vh-100"
+    style="
+      background-image: url('assets/images/bg.png');
+      background-position: center;
+    "
+  >
+    <div class="authincation h-100">
+      <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+          <div class="col-md-6">
+            <div class="authincation-content">
+              <div class="row no-gutters">
+                <div class="col-xl-12">
+                  <div class="auth-form">
+                    <div class="text-center mb-3">
+                      <a href="index.html"
+                        ><img src="images/logo/logo-full.png" alt=""
+                      /></a>
+                    </div>
+                    <h4 class="text-center mb-4">Sign in your account</h4>
+                    <form (ngSubmit)="login()">
+                      <div class="mb-3">
+                        <label class="mb-1"><strong>Email</strong></label>
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Email"
+                          [(ngModel)]="email"
+                          name="email"
+                          required
+                        />
+                        <div class="mb-3">
+                          <label class="mb-1"><strong>Password</strong></label>
+                          <input
+                            class="form-control"
+                            type="password"
+                            placeholder="Password"
+                            [(ngModel)]="password"
+                            name="password"
+                            required
+                          />
+                        </div>
+                        <button type="submit" class="btn btn-info">
+                          <strong>Login</strong>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    l
+  </body>
+</html>

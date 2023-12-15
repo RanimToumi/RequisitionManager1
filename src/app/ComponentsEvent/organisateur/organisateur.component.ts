@@ -20,7 +20,9 @@ export class OrganisateurComponent implements OnInit {
     email:'',
     cin:'',
     phoneNumber:'',
-    adresse:''
+    adresse:'',
+    password:'',
+    role:''
   };
 
   filteredOrganisateurs: Organisateur[] = []; 

@@ -22,6 +22,7 @@ import { OrganisationComponent } from './ComponentsEvent/organisation/organisati
 import { Sidebar3Component } from './sidebar3/sidebar3/sidebar3.component';
 import { CalendarComponent } from './ComponentsEvent/calendar/calendar.component';
 import { ViewprovidersComponent } from './viewproviders/viewproviders.component';
+
 import { ClientComponent } from './CampaignModule/client/client.component';
 import { ProduitComponent } from './CampaignModule/produit/produit.component';
 import { CampaignComponent } from './CampaignModule/campaign/campaign.component';
@@ -31,8 +32,23 @@ import { Sibebar4Component } from './CampaignModule/sibebar4/sibebar4.component'
 import { ReceiveResponsesComponent } from './CampaignModule/receive-responses/receive-responses.component';
 import { RegisterTfaComponent } from './CampaignModule/register-tfa/register-tfa.component';
 import { LoginTfaComponent } from './CampaignModule/login-tfa/login-tfa.component';
+
 import { SuccessComponent } from './CampaignModule/success/success.component';
 import { FieldComponent } from './CampaignModule/field/field.component';
+
+
+import { RegisterLoginComponent } from './ComponentsEvent/register-login/register-login.component';
+import { LoginRegisterComponent } from './ComponentsEvent/login-register/login-register.component';
+
+import { LoginemployeeComponent } from './components/loginemployee/loginemployee.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { DepartementComponent } from './components/departement/departement.component';
+
+import { TasksComponent } from './TBSgestionProjet/tasks/tasks.component';
+import { ProjectComponent } from './TBSgestionProjet/project/project.component';
+import { AuthComponent } from './TBSgestionProjet/auth/auth.component';
+
+
 
 const routes: Routes = [
   {path:'admin-dashboard',component:AdminDashboardMainComponent,children:[
@@ -58,6 +74,14 @@ const routes: Routes = [
   {path:'sidebar3', component:Sidebar3Component},
   {path:'calendar', component:CalendarComponent},
   {path:'viewprovider', component:ViewprovidersComponent},
+  
+ //hadil
+  {path:'registerlogin', component:RegisterLoginComponent},
+  {path:'loginregister', component:LoginRegisterComponent},
+  {path:'loginemployees',component:LoginemployeeComponent},
+  {path:'employees',component:EmployeesComponent},
+  {path:'departements',component:DepartementComponent},
+
   // sahar
   {path:"success",component:SuccessComponent}, 
   {path:"field",component:FieldComponent}, 
@@ -71,7 +95,15 @@ const routes: Routes = [
   {path:"login-tfa",component:LoginTfaComponent},
   {path:"receiveResponses",component:ReceiveResponsesComponent},
 
-
+  {path:'registerlogin', component:RegisterLoginComponent},
+  {path:'loginregister', component:LoginRegisterComponent},
+  {path:'tasks', component:TasksComponent},
+  {path:'projects', component:ProjectComponent},
+  {path:'auth', component:AuthComponent},
+  {path:'tasks', component:TasksComponent},
+  {path:'projects', component:ProjectComponent},
+  {path:'auth', component:AuthComponent},
+  
 ];
 
 @NgModule({

@@ -83,14 +83,14 @@ export class RequisitionComponent implements OnInit {
   addRequisition(addForm: NgForm) {
     if (addForm.valid) {
       // Définissez vos options HTTP avec les en-têtes d'autorisation
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjNAZ21haWwuY29tIiwiaWF0IjoxNzAwODY3MjA1LCJleHAiOjE3MDg4NjcyMDV9.zQKiKxdUcs5tx1c-ovW_Iutvvm7taRiQTnHfnU28lg0'
-        })
-      };
+      // const httpOptions = {
+      //   headers: new HttpHeaders({
+      //     'Content-Type': 'application/json',
+      //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjNAZ21haWwuY29tIiwiaWF0IjoxNzAwODY3MjA1LCJleHAiOjE3MDg4NjcyMDV9.zQKiKxdUcs5tx1c-ovW_Iutvvm7taRiQTnHfnU28lg0'
+      //   })
+      // };
       // Vérifiez si le formulaire est valide avant d'ajouter le fournisseur
-      this.requisitionService.addRequisitionHeader(this.requisition, httpOptions).subscribe(
+      this.requisitionService.addRequisitionHeader(this.requisition).subscribe(
         () => {
           alert('requisition is added successfully');
           // Réinitialisez le formulaire après l'ajout si nécessaire
